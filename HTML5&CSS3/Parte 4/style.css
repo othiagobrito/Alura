@@ -94,10 +94,6 @@ footer {
     margin: 20px 0 0;
 }
 
-main {
-    
-}
-
 form {
     margin: 40px 0;
 }
@@ -139,7 +135,6 @@ form label, form legend {
 
 table {
     margin: 20px 0 40px;
-
 }
 
 thead {
@@ -235,6 +230,12 @@ th, td {
 
 .imagem-beneficios {
     width: 60%;
+    opacity: 1;
+    transition: 400ms;
+}
+
+.imagem-beneficios:hover {
+    opacity: 0.3;
 }
 
 .video {
