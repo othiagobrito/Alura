@@ -246,7 +246,19 @@ th, td {
 
 /* Dispositivos Mobile */
 @media screen and (max-width: 480px) {
-    body {
-        background: red;
+    .caixa, .principal, .conteudo-beneficios, .mapa-conteudo, .video {
+        width: auto;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    nav {
+        position: static;
+    }
+
+    .lista-beneficios, .imagem-beneficios {
+        width: 100%;
     }
 }
