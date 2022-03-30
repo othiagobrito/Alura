@@ -1,10 +1,10 @@
 .botao {
-    background-color: #FFCB47;
+    background-color: var(--amarelo);
 
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    color: #FFFFFF;
+    color: var(--branco);
 
     width: 100%;
     padding-top: 1rem;
