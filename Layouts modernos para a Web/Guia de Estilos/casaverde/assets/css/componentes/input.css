@@ -18,7 +18,7 @@
 
     background-color: var(--branco);
 
-    box-shadow: 10px 10px 30px #0000000F;
+    box-shadow: 10px 10px 30px var(--preto-transparente);
 }
 
 .input--icone {
