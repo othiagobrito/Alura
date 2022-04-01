@@ -3,7 +3,7 @@
 
     text-align: center;
     font-family: inherit;
-    font-weight: 700;
+    font-weight: var(--peso-botao);
     color: var(--branco);
 
     width: 100%;
