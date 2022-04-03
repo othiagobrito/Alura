@@ -11,8 +11,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Elsie+Swash+Caps:wght@900&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/css/base/base.css">
+    <link rel="stylesheet" href="assets/css/componentes/cabecalho.css">
+    <link rel="stylesheet" href="assets/css/componentes/botoes.css">
+    <link rel="stylesheet" href="assets/css/componentes/input.css">
+    <link rel="stylesheet" href="assets/css/componentes/cartao.css">
+    <link rel="stylesheet" href="assets/css/componentes/item.css">
+    <link rel="stylesheet" href="assets/css/componentes/produto.css">
+    <link rel="stylesheet" href="assets/css/componentes/video.css">
+    <link rel="stylesheet" href="assets/css/componentes/rodape.css">
 </head>
 <body>
-    
+    <header class="cabecalho container">
+        <img src="assets/img/logo.svg" alt="Logo da Casa Verde" class="cabecalho__logo">
+        <a href="#" aria-label="Carrinho de compras">
+            <img src="assets/img/icones/carrinho.svg" alt="Ícone do carrinho de compras" class="cabecalho__carrinho">
+        </a>
+    </header>
+
+    <footer class="container rodape">
+        <img src="assets/img/logo.svg" alt="Logo da Casa Verde" class="rodape__logo">
+        <ul class="rodape__social">
+            <li><a href="#" class="rodape__social-midia" title="Facebook"><img src="assets/img/icones/facebook.svg" alt="Ícone Facebook"></a></li>
+            <li><a href="#" class="rodape__social-midia" title="Twitter"><img src="assets/img/icones/twitter.svg" alt="Ícone Twitter"></a></li>
+            <li><a href="#" class="rodape__social-midia" title="Instagram"><img src="assets/img/icones/instagram.svg" alt="Ícone Instagram"></a></li>
+        </ul>
+
+        <address class="rodape__unidade texto">
+            <span class="rodape__unidade-titulo">Rio de Janeiro</span>
+            Rua Siqueira Campos, 171, 303<br>
+            Copacabana<br>
+            Telefone: (21) 99876-0099
+        </address>
+
+        <address class="rodape__unidade texto">
+            <span class="rodape__unidade-titulo">São Paulo</span>
+            Rua Anita Garibaldi, 33, 13<br>
+            Sé<br>
+            Telefone: (11) 99875-2201
+        </address>
+    </footer>
 </body>
 </html>
