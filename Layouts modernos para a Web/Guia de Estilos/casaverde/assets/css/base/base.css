@@ -6,7 +6,7 @@ body {
     font-size: var(--tamanho-corpo);
     color: var(--cinza);
 
-    background: url(../../img/fundo-linhas.png);
+    background: url(../../img/fundo-textura.png), url(../../img/fundo-linhas.png);
     background-position: center;
 }
 
@@ -31,7 +31,7 @@ body {
     margin-bottom: .75rem;
 }
 
-.alinhamento--esquerda{ 
+.alinhamento--esquerda { 
     text-align: left;
 }
 
