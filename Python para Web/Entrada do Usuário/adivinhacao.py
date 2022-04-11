@@ -5,6 +5,7 @@ print("Bem Vindo ao jogo de Adivinhação!")
 print("*********************************")
 
 secret_number = randint(1, 100)
+points = 1000
 
 level = 0
 while level < 1 or level > 3:
@@ -47,13 +48,16 @@ for round in range(1, attempts + 1):
     bigger = guess > secret_number
 
     if right:
-        print("\nVocê acertou!")
+        print(f"\nVocê acertou!\nPontos: {points}")
         break
     else:
         if bigger:
             print("Você errou! Seu chute foi maior do que o número secreto.\n")
         else:
             print("Você errou! Seu chute foi menor do que o número secreto.\n")
+        
+        lost_points = abs(secret_number - guess)
+        points -= lost_points
 
 if round >= attempts:
     print(f"O número secreto era {secret_number}")
