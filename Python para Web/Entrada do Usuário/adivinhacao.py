@@ -63,3 +63,6 @@ def jogar():
     if round >= attempts:
         print(f"O número secreto era {secret_number}")
     print("\nFim do jogo!")
+
+if __name__ == "__main__":
+    jogar()
