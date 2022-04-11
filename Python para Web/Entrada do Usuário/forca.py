@@ -1,6 +1,7 @@
-print("*********************************")
-print("***Bem Vindo ao jogo de Forca!***")
-print("*********************************")
+def jogar():
+    print("*********************************")
+    print("***Bem Vindo ao jogo de Forca!***")
+    print("*********************************")
 
 
-print("\nFim do jogo!")
+    print("\nFim do jogo!")
