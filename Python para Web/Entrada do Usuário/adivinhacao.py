@@ -4,20 +4,28 @@ print("*********************************")
 
 secret_number = 43
 
-guess = int(input("Digite o seu número: "))
+attempts = 3
 
-print(f"Você digitou {guess}")
+while attempts > 0:
+    print(f"\nVocê tem {attempts} tentativas\n")
 
-right = secret_number == guess
+    guess = int(input("Digite o seu número: "))
 
-bigger = guess > secret_number
+    print(f"Você digitou {guess}")
 
-if right:
-    print("\nVocê acertou!")
-else:
-    if bigger:
-        print("\nVocê errou! Seu chute foi maior do que o número secreto.")
+    right = secret_number == guess
+
+    bigger = guess > secret_number
+
+    if right:
+        print("\nVocê acertou!")
+        break
     else:
-        print("\nVocê errou! Seu chute foi menor do que o número secreto.")
+        if bigger:
+            print("Você errou! Seu chute foi maior do que o número secreto.\n")
+        else:
+            print("Você errou! Seu chute foi menor do que o número secreto.\n")
+    
+    attempts -= 1
 
 print("\nFim do jogo!")
