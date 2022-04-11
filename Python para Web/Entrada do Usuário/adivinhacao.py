@@ -1,6 +1,3 @@
-import atexit
-
-
 print("*********************************")
 print("Bem Vindo ao jogo de Adivinhação!")
 print("*********************************")
@@ -12,7 +9,14 @@ attempts = 3
 for round in range(1, attempts + 1):
     print(f"\nTentativa {round} de {attempts}\n")
 
-    guess = int(input("Digite o seu número: "))
+    guess = 0
+    limit = guess < 1 or guess > 100
+
+    while guess < 1 or guess > 100:
+        guess = int(input("Digite um número entre 1 e 100: "))
+
+        if guess < 1 or guess > 100:
+            print("Você deve digitar um número entre 1 e 100!\n")
 
     print(f"Você digitou {guess}")
 
