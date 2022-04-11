@@ -1,8 +1,10 @@
+from random import randint
+
 print("*********************************")
 print("Bem Vindo ao jogo de Adivinhação!")
 print("*********************************")
 
-secret_number = 43
+secret_number = randint(1, 101)
 
 attempts = 3
 
@@ -33,4 +35,6 @@ for round in range(1, attempts + 1):
         else:
             print("Você errou! Seu chute foi menor do que o número secreto.\n")
 
+if round >= 3:
+    print(f"O número secreto era {secret_number}\n")
 print("\nFim do jogo!")
