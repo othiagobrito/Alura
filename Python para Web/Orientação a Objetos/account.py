@@ -10,9 +10,16 @@ class Account:
     
     def deposit(self, value):
         self.__balance += value
+    
+    def __allow_withdraw(self, value):
+        available = self.__balance + self.__limit
+        return value <= available
 
     def withdraw(self, value):
-        self.__balance -= value
+        if self.__allow_withdraw(value):
+            self.__balance -= value
+        else:
+            print(f"Saldo insuficiente! O valor {value} passou do limite.")
     
     def transfer(self, value, destiny):
         self.withdraw(value)
@@ -40,12 +47,5 @@ thiago.statement()
 pedro = Account(543, "Pedro", 100, 1000.0)
 pedro.statement()
 
-thiago.transfer(100, pedro)
+thiago.withdraw(5000)
 thiago.statement()
-pedro.statement()
-
-print(thiago.balance)
-print(thiago.holder)
-print(thiago.limit)
-thiago.limit = 2000.0
-print(thiago.limit)
