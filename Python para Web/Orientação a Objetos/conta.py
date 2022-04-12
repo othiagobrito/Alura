@@ -1,7 +1,5 @@
 class Account:
     def __init__(self, number, holder, balance, limit):
-        print(f"Construindo objeto ... {self}")
-
         self.__number = number
         self.__holder = holder
         self.__balance = balance
@@ -15,12 +13,17 @@ class Account:
 
     def withdraw(self, value):
         self.__balance -= value
+    
+    def transfer(self, value, destiny):
+        self.withdraw(value)
+        destiny.deposit(value)
 
-acc = Account(123, "Thiago", 1500.0, 1000.0)
-acc.statement()
+thiago = Account(123, "Thiago", 1500.0, 1000.0)
+thiago.statement()
 
-acc.deposit(1000)
-acc.statement()
+pedro = Account(543, "Pedro", 100, 1000.0)
+pedro.statement()
 
-acc.withdraw(30)
-acc.statement()
+thiago.transfer(100, pedro)
+thiago.statement()
+pedro.statement()
