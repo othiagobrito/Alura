@@ -1,6 +1,3 @@
-from teste import statement
-
-
 class Account:
     def __init__(self, number, holder, balance, limit):
         print(f"Construindo objeto ... {self}")
