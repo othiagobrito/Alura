@@ -40,6 +40,14 @@ class Account:
     @limit.setter
     def limit(self, value):
         self.__limit = value
+    
+    @staticmethod
+    def bank_code():
+        return "001"
+    
+    @staticmethod
+    def banks_codes():
+        return {"BB": "001", "Caixa": "104", "Bradesco": "237"}
 
 thiago = Account(123, "Thiago", 1500.0, 1000.0)
 thiago.statement()
