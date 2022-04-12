@@ -1,9 +1,15 @@
 def jogar():
+    from random import choice
+
     print("*********************************")
     print("***Bem Vindo ao jogo de Forca!***")
     print("*********************************")
 
-    secret_word = "banana"
+    file = open("palavras.txt", "r")
+    words = list(line.strip() for line in file)
+    file.close()
+
+    secret_word = choice(words)
     right_letters = list("_" for letter in secret_word)
 
     game_over = False
