@@ -17,6 +17,18 @@ class Account:
     def transfer(self, value, destiny):
         self.withdraw(value)
         destiny.deposit(value)
+    
+    def get_balance(self):
+        return self.__balance
+    
+    def get_holder(self):
+        return self.__holder
+    
+    def get_limit(self):
+        return self.__limit
+    
+    def set_limit(self, value):
+        self.__limit = value
 
 thiago = Account(123, "Thiago", 1500.0, 1000.0)
 thiago.statement()
@@ -27,3 +39,9 @@ pedro.statement()
 thiago.transfer(100, pedro)
 thiago.statement()
 pedro.statement()
+
+print(thiago.get_balance())
+print(thiago.get_holder())
+print(thiago.get_limit())
+thiago.set_limit(2000.0)
+print(thiago.get_limit())
