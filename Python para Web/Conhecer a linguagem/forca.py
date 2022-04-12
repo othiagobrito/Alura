@@ -4,10 +4,7 @@ def jogar():
     print("*********************************")
 
     secret_word = "banana"
-    right_letters = []
-    
-    for letter in secret_word:
-        right_letters.append(letter.replace(letter, "_"))
+    right_letters = list("_" for letter in secret_word)
 
     game_over = False
     right_word = False
