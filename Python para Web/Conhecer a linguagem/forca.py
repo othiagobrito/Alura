@@ -27,6 +27,7 @@ def jogar():
             print(f"A letra '{guess.upper()}' não consta na palavra.\nVocê tem mais {attempts_limit - wrong_attempts} tentativas")
         
         if wrong_attempts == attempts_limit:
+            print(f"\nA palavra era {secret_word}.")
             print("\nGAME OVER!")
             game_over = True
         
