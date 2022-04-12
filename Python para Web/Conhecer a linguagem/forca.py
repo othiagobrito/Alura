@@ -9,7 +9,7 @@ def jogar():
     right_word = False
 
     while not game_over and not right_word:
-        guess = input("Escolha uma letra: ").lower()
+        guess = input("Escolha uma letra: ").lower().strip()
         print()
 
         index = 0
