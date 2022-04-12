@@ -17,15 +17,11 @@ def jogar():
         word = "".join(right_letters)
         print(f"\n{word}\n")
 
-        guess = input("Escolha uma letra: ").lower().strip()
+        guess = ask()
         print()
 
         if guess in secret_word:
-            index = 0
-            for letter in secret_word:
-                if guess == letter:
-                    right_letters[index] = guess
-                index += 1
+            right_guess(guess, right_letters, secret_word)
         else:
             wrong_attempts += 1
             print(f"A letra '{guess.upper()}' não consta na palavra.\nVocê tem mais {attempts_limit - wrong_attempts} tentativas")
@@ -39,8 +35,6 @@ def jogar():
             print(f"\n{word}\n")
             print("Você acertou a palavra secreta!!")
             right_word = True
-
-    print("Fim do jogo!")
 
 def welcome():
     print("*********************************")
@@ -56,6 +50,17 @@ def open_file():
 
 def choose_word(word):
     return list("_" for letter in word)
+
+def ask():
+    guess = input("Escolha uma letra: ").lower().strip()
+    return guess
+
+def right_guess(guess, right, word):
+    index = 0
+    for letter in word:
+        if guess == letter:
+            right[index] = guess
+        index += 1
 
 if __name__ == "__main__":
     jogar()
