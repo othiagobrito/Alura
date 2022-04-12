@@ -1,16 +1,10 @@
 def jogar():
     from random import choice
 
-    print("*********************************")
-    print("***Bem Vindo ao jogo de Forca!***")
-    print("*********************************")
+    welcome()
 
-    file = open("palavras.txt", "r")
-    words = list(line.strip() for line in file)
-    file.close()
-
-    secret_word = choice(words)
-    right_letters = list("_" for letter in secret_word)
+    secret_word = choice(open_file())
+    right_letters = choose_word(secret_word)
 
     game_over = False
     right_word = False
@@ -47,6 +41,21 @@ def jogar():
             right_word = True
 
     print("Fim do jogo!")
+
+def welcome():
+    print("*********************************")
+    print("***Bem Vindo ao jogo de Forca!***")
+    print("*********************************")
+
+def open_file():
+    file = open("palavras.txt", "r")
+    words = list(line.strip() for line in file)
+    file.close()
+
+    return words
+
+def choose_word(word):
+    return list("_" for letter in word)
 
 if __name__ == "__main__":
     jogar()
