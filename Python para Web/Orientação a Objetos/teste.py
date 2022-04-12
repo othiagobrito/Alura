@@ -1,9 +1,19 @@
-def create_account(numero, titular, saldo, limite):
-    conta = {
-        "numero": numero,
-        "titular": titular,
-        "saldo": saldo,
-        "limite": limite
+def create_account(number, holder, balance, limit):
+    account = {
+        "number": number,
+        "holder": holder,
+        "balance": balance,
+        "limit": limit
     }
 
-    return conta
+    return account
+
+def deposit(account, value):
+    account["balance"] += value
+
+def withdraw(account, value):
+    account["balance"] -= value
+
+def statement(account):
+    value = account["balance"]
+    print(f"Balance is {value}")
