@@ -24,10 +24,16 @@ class Movie(Program):
         super().__init__(name, year)
         self.lenght = lenght
 
+    def print_program(self):
+        print(f"{self._name} - {self.year} - {self.lenght} min - {self._likes} likes")
+
 class Series(Program):
     def __init__(self, name, year, seasons):
         super().__init__(name, year)
         self.seasons = seasons
+    
+    def print_program(self):
+        print(f"{self._name} - {self.year} - {self.seasons} seasons - {self._likes} likes")
 
 avengers = Movie("Avengers - Infinite War", 2018, 160)
 avengers.like()
@@ -41,5 +47,4 @@ atlanta.like()
 movies_and_series = [avengers, atlanta]
 
 for program in movies_and_series:
-    details = program.lenght if hasattr(program, "lenght") else program.seasons
-    print(f"{program.name} - {program.year} - {details} - {program.likes}")
+    program.print_program()
