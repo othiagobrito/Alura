@@ -51,8 +51,7 @@ class Playlist:
     def listing(self):
         return self._programs
     
-    @property
-    def size(self):
+    def __len__(self):
         return len(self._programs)
 
 avengers = Movie("Avengers - Infinite War", 2018, 160)
@@ -75,7 +74,7 @@ young_sheldon.like()
 movies_and_series = [avengers, atlanta, batman, young_sheldon]
 weekend_playlist = Playlist("weekend", movies_and_series)
 
-print(f"Playlist size: {weekend_playlist.size}")
+print(f"Playlist size: {len(weekend_playlist)}")
 
 for program in weekend_playlist:
     print(program)
