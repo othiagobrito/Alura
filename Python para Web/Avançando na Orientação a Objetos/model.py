@@ -31,9 +31,15 @@ class Series(Program):
 
 avengers = Movie("Avengers - Infinite War", 2018, 160)
 avengers.like()
-print(f"Nome: {avengers.name} - Year: {avengers.year} - Lenght: {avengers.lenght}m - Likes: {avengers.likes}")
+#print(f"Nome: {avengers.name} - Year: {avengers.year} - Lenght: {avengers.lenght}m - Likes: {avengers.likes}")
 
 atlanta = Series("Atlanta", 2018, 2)
 atlanta.like()
 atlanta.like()
-print(f"Nome: {atlanta.name} - Year: {atlanta.year} - Seasons: {atlanta.seasons} - Likes: {atlanta.likes}")
+#print(f"Nome: {atlanta.name} - Year: {atlanta.year} - Seasons: {atlanta.seasons} - Likes: {atlanta.likes}")
+
+movies_and_series = [avengers, atlanta]
+
+for program in movies_and_series:
+    details = program.lenght if hasattr(program, "lenght") else program.seasons
+    print(f"{program.name} - {program.year} - {details} - {program.likes}")
