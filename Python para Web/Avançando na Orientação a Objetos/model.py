@@ -18,33 +18,34 @@ class Program:
 
     def like(self):
         self._likes += 1
+    
+    def __str__(self):
+        return f"{self._name} - {self.year} - {self._likes} likes"
 
 class Movie(Program):
     def __init__(self, name, year, lenght):
         super().__init__(name, year)
         self.lenght = lenght
 
-    def print_program(self):
-        print(f"{self._name} - {self.year} - {self.lenght} min - {self._likes} likes")
+    def __str__(self):
+        return f"{self._name} - {self.year} - {self.lenght} min - {self._likes} likes"
 
 class Series(Program):
     def __init__(self, name, year, seasons):
         super().__init__(name, year)
         self.seasons = seasons
     
-    def print_program(self):
-        print(f"{self._name} - {self.year} - {self.seasons} seasons - {self._likes} likes")
+    def __str__(self):
+        return f"{self._name} - {self.year} - {self.seasons} seasons - {self._likes} likes"
 
 avengers = Movie("Avengers - Infinite War", 2018, 160)
 avengers.like()
-#print(f"Nome: {avengers.name} - Year: {avengers.year} - Lenght: {avengers.lenght}m - Likes: {avengers.likes}")
 
 atlanta = Series("Atlanta", 2018, 2)
 atlanta.like()
 atlanta.like()
-#print(f"Nome: {atlanta.name} - Year: {atlanta.year} - Seasons: {atlanta.seasons} - Likes: {atlanta.likes}")
 
 movies_and_series = [avengers, atlanta]
 
 for program in movies_and_series:
-    program.print_program()
+    print(program)
