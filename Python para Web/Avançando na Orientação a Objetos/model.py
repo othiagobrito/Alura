@@ -43,6 +43,10 @@ class Playlist:
         self.name = name
         self._programs = programs
 
+    def __getitem__(self, item):
+        return self._programs[item]
+
+
     @property
     def listing(self):
         return self._programs
@@ -73,7 +77,7 @@ weekend_playlist = Playlist("weekend", movies_and_series)
 
 print(f"Playlist size: {weekend_playlist.size}")
 
-for program in weekend_playlist.listing:
+for program in weekend_playlist:
     print(program)
 
-print(f"In playlist: {batman in weekend_playlist.listing}")
+print(f"In playlist: {batman in weekend_playlist}")
