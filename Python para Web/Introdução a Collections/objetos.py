@@ -22,3 +22,12 @@ print(contas)
 
 for conta in contas:
     print(conta)
+
+def deposita_contas(contas):
+    for conta in contas:
+        conta.deposita(100)
+
+deposita_contas(contas)
+
+for conta in contas:
+    print(conta)
