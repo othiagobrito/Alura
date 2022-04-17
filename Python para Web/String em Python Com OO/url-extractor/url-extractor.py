@@ -4,10 +4,13 @@ class URL_Extractor:
         self.url_validation()
     
     def clean_url(self, url):
-        return url.strip()
+        if type(url) == str:
+            return url.strip()
+        else:
+            return ""
     
     def url_validation(self):
-        if self.url == "":
+        if not self.url:
             raise ValueError("A URL está vazia!")
     
     def base_url(self):
