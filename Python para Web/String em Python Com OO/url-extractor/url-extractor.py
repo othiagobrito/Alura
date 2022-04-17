@@ -49,11 +49,15 @@ class URL_Extractor:
     
     def __str__(self):
         return self.url
+    
+    def __eq__(self, other):
+        return self.url == other.url
 
+url = "bytebank.com/cambio?quantidade=100&moedaOrigem=real&moedaDestino=dolar"
+url_extractor = URL_Extractor(url)
+url_extractor2 = URL_Extractor(url)
 
-url_extractor = URL_Extractor("bytebank.com/cambio?quantidade=100&moedaOrigem=real&moedaDestino=dolar")
-print(f"Tamanho da URL: {len(url_extractor)}")
-print(url_extractor)
+print(id(url_extractor))
+print(id(url_extractor2))
 
-amount = url_extractor.get_parameters_value("quantidade")
-print(amount)
+# print(url_extractor == url_extractor2)
