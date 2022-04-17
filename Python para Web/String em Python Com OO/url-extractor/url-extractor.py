@@ -43,8 +43,12 @@ class URL_Extractor:
             value = self.get_url_parameters()[search_parameters:separator_index]
         
         return value
+    
+    def __len__(self):
+        return len(self.url)
 
 
 url_extractor = URL_Extractor("bytebank.com/cambio?quantidade=100&moedaOrigem=real&moedaDestino=dolar")
+print(f"Tamanho da URL: {len(url_extractor)}")
 amount = url_extractor.get_parameters_value("quantidade")
 print(amount)
