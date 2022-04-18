@@ -24,3 +24,26 @@ conta2 = ContaSalario(37)
 print(conta2)
 
 print(conta1 == conta2)
+
+
+guilherme = ContaSalario(17)
+guilherme.deposita(500)
+
+daniela = ContaSalario(3)
+daniela.deposita(1000)
+
+paulo = ContaSalario(133)
+paulo.deposita(510)
+
+contas = [guilherme, daniela, paulo]
+
+def extrai_saldo(conta):
+    return conta._saldo
+
+for conta in sorted(contas, key=extrai_saldo):
+    print(conta)
+
+from operator import attrgetter
+
+for conta in sorted(contas, key=attrgetter("_saldo")):
+    print(conta)
