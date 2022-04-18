@@ -12,6 +12,9 @@ class ContaSalario:
 
         return self._codigo == outro._codigo and self._saldo == outro._saldo
     
+    def __lt__(self, outro):
+        return self._saldo < outro._saldo
+    
     def __str__(self):
         return f"Código: {self._codigo} - Saldo: {self._saldo}"
 
@@ -46,4 +49,12 @@ for conta in sorted(contas, key=extrai_saldo):
 from operator import attrgetter
 
 for conta in sorted(contas, key=attrgetter("_saldo")):
+    print(conta)
+
+print(guilherme < paulo)
+
+for conta in sorted(contas):
+    print(conta)
+
+for conta in sorted(contas, reverse=True):
     print(conta)
