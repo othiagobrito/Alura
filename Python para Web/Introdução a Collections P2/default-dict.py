@@ -18,3 +18,30 @@ for palavra in meu_txt.split():
     aparicoes[palavra] = ate_agora + 1
 
 print(aparicoes)
+
+aparicoes = defaultdict(int)
+
+for palavra in meu_txt.split():
+    aparicoes[palavra] += 1
+
+print(aparicoes)
+
+class Conta:
+    def __init__(self):
+        print("Criando uma conta")
+
+contas = defaultdict(Conta)
+contas[15]
+contas[17]
+contas[15]
+
+from collections import Counter
+
+aparicoes = Counter()
+for palavra in meu_txt.split():
+    aparicoes[palavra] += 1
+
+print(aparicoes)
+
+aparicoes = Counter(meu_txt.split())
+print(aparicoes)
