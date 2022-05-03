@@ -8,6 +8,6 @@ class ListandoReceitas(admin.ModelAdmin):
     list_display_links = ("id", "nome_receita", "categoria", "tempo_preparo")
     search_fields = ("nome_receita",)
     list_filter = ("categoria",)
-    list_per_page = 2
+    list_per_page = 10
 
 admin.site.register(Receita, ListandoReceitas)
