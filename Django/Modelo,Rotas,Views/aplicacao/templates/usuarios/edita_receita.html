@@ -18,7 +18,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-heading">
-                    <h3>Edite aqui sua receita, {{ user.username }} :)</h3>
+                    <h3>Edite aqui sua receita, {{ user.username.title }} :)</h3>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
             <div class="col-12">
             <p>Todos os campos são obrigatórios</p>
                 <div class="contact-form-area">
-                    <form action="" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+                    <form action="{% url 'atualiza_receita' %}" method="POST" enctype="multipart/form-data"> {% csrf_token %}
                             <input type="text" id="receita_id" class="form-control" name="receita_id" value="{{receita.id}}" hidden>
                         <div class="row">
                             <div class="col-12 col-lg-12">
