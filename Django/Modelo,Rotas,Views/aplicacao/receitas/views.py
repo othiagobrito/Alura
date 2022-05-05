@@ -10,7 +10,7 @@ def index(request):
         "receitas": receitas
     }
 
-    return render(request, "index.html", dados)
+    return render(request, "receitas/index.html", dados)
 
 def receita(request, receita_id):
     receita = get_object_or_404(Receita, pk=receita_id)
@@ -19,7 +19,7 @@ def receita(request, receita_id):
         'receita': receita,
     }
 
-    return render(request, "receita.html", receita_a_exibir)
+    return render(request, "receitas/receita.html", receita_a_exibir)
 
 def buscar(request):
     lista_receitas = Receita.objects.order_by("-date_receita").filter(publicada=True)
@@ -33,4 +33,4 @@ def buscar(request):
         "receitas": lista_receitas
     }
 
-    return render(request, "buscar.html", dados)
+    return render(request, "receitas/buscar.html", dados)
