@@ -4,7 +4,12 @@
     <section class="col-8">
         <form action="{% url 'minha_consulta' %}" method="post">
             {% csrf_token %}
-            {{ form }}
+            {% for field in form.visible_fields %}
+                <div class="form-group">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                </div>
+            {% endfor %}
             <input type="submit" value="Ok" class="btn btn-success">
         </form>
     </section>
