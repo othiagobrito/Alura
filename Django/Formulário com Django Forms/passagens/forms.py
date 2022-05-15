@@ -2,6 +2,7 @@ from django import forms
 from tempus_dominus.widgets import DatePicker
 from datetime import datetime
 from passagens.classe_viagem import tipos_de_classe
+from passagens.validation import *
 
 class PassagemForms(forms.Form):
     origem = forms.CharField(label="Origem", max_length=100)
@@ -15,8 +16,17 @@ class PassagemForms(forms.Form):
 
     def clean(self):
         origem = self.cleaned_data.get("origem")
+        destino = self.cleaned_data.get("destino")
 
-        if any(char.isdigit() for char in origem):
-            raise forms.ValidationError("Origem inválida: Não inclua números!")
-        else:
-            return origem
+        lista_de_erros = {}
+
+        campo_tem_numero(origem, "origem", lista_de_erros)
+        campo_tem_numero(destino, "destino", lista_de_erros)
+        origem_destino_iguais(origem, destino, lista_de_erros)
+
+        if lista_de_erros is not None:
+            for erro in lista_de_erros:
+                mensagem_erro = lista_de_erros[erro]
+                self.add_error(erro, mensagem_erro)
+                
+        return self.cleaned_data
