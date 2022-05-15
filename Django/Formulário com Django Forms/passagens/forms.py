@@ -13,8 +13,8 @@ class PassagemForms(forms.Form):
     informacoes = forms.CharField(label="Informações extras", max_length=200, widget=forms.Textarea(), required=False)
     email = forms.EmailField(label="Email", max_length=150)
 
-    def clean_origem(self):
-        origem = self.clean_data.get("origem")
+    def clean(self):
+        origem = self.cleaned_data.get("origem")
 
         if any(char.isdigit() for char in origem):
             raise forms.ValidationError("Origem inválida: Não inclua números!")

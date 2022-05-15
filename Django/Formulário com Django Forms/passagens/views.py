@@ -28,4 +28,3 @@ def revisao_consulta(request):
             }
             
             return render(request, "index.html", contexto)
-
