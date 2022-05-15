@@ -39,3 +39,8 @@ class PassagemForms(forms.ModelForm):
                 self.add_error(erro, mensagem_erro)
                 
         return self.cleaned_data
+
+class PessoaForms(forms.ModelForm):
+    class Meta:
+        model = Pessoa
+        exclude = ["nome"]
