@@ -3,4 +3,7 @@ from selenium import webdriver
 
 class AnimaisTestCase(LiveServerTestCase):
     def setUp(self):
-        pass
+        self.browser = webdriver.Chrome("F:/Alura/Django/Fundamentos-do-TDD/tdd_busca_animal/chromedriver.exe")
+
+    def tearDown(self):
+        self.browser.quit()
