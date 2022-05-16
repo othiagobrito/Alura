@@ -12,5 +12,7 @@ class AnimaisURLSTestCase(TestCase):
         ''' Teste para verificar se home da aplicação utilização função index da view '''
         
         request = self.factory.get("/")
-        response = index(request)
-        self.assertEqual(response.status_code, 200)
+
+        with self.assertTemplateUsed("index.html"):
+            response = index(request)
+            self.assertEqual(response.status_code, 200)
