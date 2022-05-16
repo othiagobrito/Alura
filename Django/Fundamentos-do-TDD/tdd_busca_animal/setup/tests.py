@@ -22,3 +22,6 @@ class AnimaisTestCase(LiveServerTestCase):
 
         buscar_animal_input.send_keys("leão")
         self.browser.find_element(By.CSS_SELECTOR, "form button").click()
+
+        caracteristicas = self.browser.find_elements(By.CSS_SELECTOR, ".result-description")
+        self.assertGreater(len(caracteristicas), 3)
