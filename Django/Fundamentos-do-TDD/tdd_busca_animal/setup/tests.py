@@ -10,3 +10,6 @@ class AnimaisTestCase(LiveServerTestCase):
 
     def test_abre_janela_chrome(self):
         self.browser.get(self.live_server_url)
+
+    def test_buscando_animal(self):
+        ''' Teste que simula busca de animal na pesquisa por um usuário '''
