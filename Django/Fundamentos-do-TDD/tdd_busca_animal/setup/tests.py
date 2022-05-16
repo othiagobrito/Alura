@@ -1,6 +1,7 @@
 from django.test import LiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from animais.models import Animal
 
 class AnimaisTestCase(LiveServerTestCase):
     def setUp(self):
@@ -8,6 +9,12 @@ class AnimaisTestCase(LiveServerTestCase):
 
     def tearDown(self):
         self.browser.quit()
+        self.animal = Animal.objects.create(
+            nome_animal = "leão",
+            predador = "Sim",
+            venenoso = "Não",
+            domestico = "Não",
+        )
 
     def test_buscando_animal(self):
         ''' Teste que simula busca de animal na pesquisa por um usuário '''
