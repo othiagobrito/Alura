@@ -11,5 +11,5 @@ def index(request):
         caracteristicas = animais.filter(nome_animal__icontains = animal_pesquisado)
 
         context = {"caracteristicas": caracteristicas}
-        
+
     return render(request, "index.html", context)
