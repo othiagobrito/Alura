@@ -19,3 +19,6 @@ class AnimaisTestCase(LiveServerTestCase):
 
         buscar_animal_input = self.browser.find_element(By.CSS_SELECTOR, "input#buscar-animal")
         self.assertEqual(buscar_animal_input.get_attribute("placeholder"), "Exemplo: leão, urso...")
+
+        buscar_animal_input.send_keys("leão")
+        self.browser.find_element(By.CSS_SELECTOR, "form button").click()
