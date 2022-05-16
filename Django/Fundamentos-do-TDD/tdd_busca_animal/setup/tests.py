@@ -7,3 +7,6 @@ class AnimaisTestCase(LiveServerTestCase):
 
     def tearDown(self):
         self.browser.quit()
+
+    def test_abre_janela_chrome(self):
+        self.browser.get(self.live_server_url)
