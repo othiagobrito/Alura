@@ -1,7 +1,9 @@
 <?php
 
 for ($contador = 1; $contador <= 15; $contador++) {
-    echo "#$contador\n";
+    if ($contador != 13) {
+        echo "#$contador\n";
+    }
 }
 
 ?>
