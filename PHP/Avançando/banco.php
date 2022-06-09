@@ -21,7 +21,11 @@ $contasCorrentes['acc1'] = sacar($contasCorrentes['acc1'], 500);
 $contasCorrentes['acc2'] = sacar($contasCorrentes['acc2'], 500);
 $contasCorrentes['acc3'] = depositar($contasCorrentes['acc3'], 500);
 
-titularUpper($contasCorrentes['acc1']);
+
+unset($contasCorrentes['acc2']);
+
+$acc = 'acc1';
+titularUpper($contasCorrentes[$acc]);
 
 foreach ($contasCorrentes as $acc => $conta) {
     ['titular' => $titular, 'saldo' => $saldo] = $conta;
