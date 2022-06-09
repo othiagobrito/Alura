@@ -24,7 +24,8 @@ $contasCorrentes['acc3'] = depositar($contasCorrentes['acc3'], 500);
 titularUpper($contasCorrentes['acc1']);
 
 foreach ($contasCorrentes as $acc => $conta) {
-    exibeMensagem("$acc | Titular: {$conta['titular']} | Saldo: {$conta['saldo']}");
+    ['titular' => $titular, 'saldo' => $saldo] = $conta;
+    exibeMensagem("$acc | Titular: $titular | Saldo: $saldo}");
 }
 
 ?>
