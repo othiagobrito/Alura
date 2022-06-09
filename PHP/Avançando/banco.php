@@ -27,9 +27,30 @@ unset($contasCorrentes['acc2']);
 $acc = 'acc1';
 titularUpper($contasCorrentes[$acc]);
 
-foreach ($contasCorrentes as $acc => $conta) {
-    ['titular' => $titular, 'saldo' => $saldo] = $conta;
-    exibeMensagem("$acc | Titular: $titular | Saldo: $saldo}");
-}
-
 ?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Contas correntes</h1>
+
+    <dl>
+        <?php
+            foreach($contasCorrentes as $conta) {?>
+                <dt>
+                    <h3>Titular: <?=$conta['titular'];?></h3>
+                </dt>
+
+                <dd>
+                    Saldo: <?=$conta['saldo']?>
+                </dd>
+        <?php } ?>
+    </dl>
+</body>
+</html>

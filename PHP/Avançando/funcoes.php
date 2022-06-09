@@ -1,7 +1,12 @@
 <?php
 
 function exibeMensagem(string $mensagem) {
-    echo $mensagem . PHP_EOL;
+    echo $mensagem . PHP_EOL . "<br>";
+}
+
+function exibeConta(array $conta) {
+    ['titular' => $titular, 'saldo' => $saldo] = $conta;
+    echo "<li>Titular: $titular | Saldo: $saldo</li>";
 }
 
 function sacar(array $conta, float $valor): array {
