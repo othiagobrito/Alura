@@ -1,24 +1,14 @@
 <?php
 
 $notas = [
-    [
-        'aluno' => 'Maria',
-        'nota' => 10
-    ],
-    [
-        'aluno' => 'Vinícius',
-        'nota' => 6
-    ],
-    [
-        'aluno' => 'Ana',
-        'nota' => 9
-    ]
+    'Vinícius' => null,
+    'João' => 8,
+    'Ana' => 10,
+    'Roberto' => 7,
+    'Maria' => 9,
 ];
 
-function ordenaNotas(array $nota1, array $nota2):int
-{
-    return $nota2['nota'] <=> $nota1['nota'];
-}
-
-usort($notas, 'ordenaNotas');
 var_dump($notas);
+
+echo "Ana fez a prova:" . PHP_EOL;
+var_dump(isset($notas['Ana']));
