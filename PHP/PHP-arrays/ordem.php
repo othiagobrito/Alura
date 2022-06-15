@@ -12,3 +12,6 @@ var_dump($notas);
 
 echo "Ana fez a prova:" . PHP_EOL;
 var_dump(isset($notas['Ana']));
+
+echo "Alguém tirou 10?" . PHP_EOL;
+var_dump(in_array(10, $notas));
