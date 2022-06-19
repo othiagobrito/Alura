@@ -14,4 +14,8 @@ spl_autoload_register(function ($classe) {
     
     $arquivo = $diretorio . $namespace_arquivo . ".php";
 
+    if (file_exists($arquivo)) {
+        require $arquivo;
+    }
+
 });

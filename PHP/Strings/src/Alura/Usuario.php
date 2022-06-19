@@ -10,6 +10,11 @@ class Usuario
 
     public function __construct(string $nome)
     {
+        $this->setNomeSobrenome($nome);
+    }
+    
+    private function setNomeSobrenome(string $nome)
+    {
         $nomeSobrenome = explode(" ", $nome, 2);
 
         if ($nomeSobrenome[0] === "") {
