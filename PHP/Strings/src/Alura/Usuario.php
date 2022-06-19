@@ -12,8 +12,6 @@ class Usuario
     public function __construct(string $nome, string $senha)
     {
         $this->setNomeSobrenome($nome);
-        $this->senha = $senha;
-
         $this->validaSenha($senha);
     }
     
@@ -51,7 +49,7 @@ class Usuario
 
     private function validaSenha(string $senha): void
     {
-        $tamanhoSenha = strlen($senha);
+        $tamanhoSenha = strlen(trim($senha));
 
         if ($tamanhoSenha > 6) {
             $this->senha = $senha;
