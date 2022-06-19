@@ -12,8 +12,17 @@ class Usuario
     {
         $nomeSobrenome = explode(" ", $nome, 2);
 
-        $this->nome = $nomeSobrenome[0];
-        $this->sobrenome = $nomeSobrenome[1];
+        if ($nomeSobrenome[0] === "") {
+            $this->nome = "Nome inválido";
+        } else {
+            $this->nome = $nomeSobrenome[0];
+        }
+
+        if ($nomeSobrenome[1] === null) {
+            $this->sobrenome = "Sobrenome inválido";
+        } else {
+            $this->sobrenome = $nomeSobrenome[1];
+        }
     }
 
     public function getNome(): string
