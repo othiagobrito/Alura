@@ -9,4 +9,9 @@ spl_autoload_register(function ($classe) {
         return;
     }
     
+    $namespace = substr($classe, strlen($prefixo));
+    $namespace_arquivo = str_replace("\\", DIRECTORY_SEPARATOR, $namespace);
+    
+    $arquivo = $diretorio . $namespace_arquivo . ".php";
+
 });
