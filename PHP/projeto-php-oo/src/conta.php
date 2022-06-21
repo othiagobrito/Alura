@@ -7,22 +7,35 @@ class Conta
     public string $nometitular;
     public float $saldo = 0;
 
-    public function sacar(float $valor)
+    public function sacar(float $valor): void
     {
         if ($valor > $this->saldo) {
             echo "Saldo indisponível!";
-        } else {
-            $this->saldo -= $valor;
+            return;
         }
+        
+        $this->saldo -= $valor;
     }
 
-    public function depositar(float $valor)
+    public function depositar(float $valor): void
     {
         if ($valor <= 0) {
             echo "Valor de depósito deve ser positivo";
-        } else {
-            $this->saldo += $valor;
+            return;
         }
+        
+        $this->saldo += $valor;
+    }
+
+    public function transferir(float $valor, Conta $destino): void
+    {
+        if ($valor > $this->saldo) {
+            echo "Saldo indisponível!";
+            return;
+        }
+
+        $this->sacar($valor);
+        $destino->depositar($valor);
     }
 
 }
