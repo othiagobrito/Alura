@@ -3,14 +3,17 @@
 class Conta
 {
 
-    public string $cpfTitular;
-    public string $nometitular;
-    public float $saldo = 0;
+    private $cpfTitular;
+    private $nometitular;
+    private $saldo = 0;
 
     public function sacar(float $valor): void
     {
         if ($valor > $this->saldo) {
             echo "Saldo indisponível!";
+            return;
+        } elseif ($valor <= 0) {
+            echo "Valor de saque inválido!";
             return;
         }
         
