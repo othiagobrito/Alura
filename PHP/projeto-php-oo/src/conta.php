@@ -1,11 +1,7 @@
 <?php
 
-function criarConta(string $cpf, string $nomeTitular, float $saldo): array
+class Conta
 {
-    return [
-        $cpf => [
-            'titular' => $nomeTitular,
-            'saldo' => $saldo,
-        ]
-    ];
+    // Definir dados da conta
+    
 }
