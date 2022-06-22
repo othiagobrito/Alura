@@ -6,12 +6,15 @@ class Conta
     private $nometitular;
     private $cpfTitular;
     private $saldo;
+    private static $numeroDeContas = 0;
 
     public function __construct(string $nometitular, string $cpfTitular)
     {
         $this->setNomeTitular($nometitular);
         $this->setCpf($cpfTitular);
         $this->saldo = 0;
+
+        self::$numeroDeContas++;
     }
 
     public function sacar(float $valor): void
@@ -76,6 +79,11 @@ class Conta
     public function getCpf(): string
     {
         return $this->cpfTitular;
+    }
+
+    public static function getNumeroDeContas(): int
+    {
+        return self::$numeroDeContas;
     }
 
 }
