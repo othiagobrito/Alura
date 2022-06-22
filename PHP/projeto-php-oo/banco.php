@@ -9,4 +9,7 @@ echo $conta1->getNome() . PHP_EOL;
 echo $conta1->getCpf() . PHP_EOL;
 echo $conta1->getExtrato() . PHP_EOL;
 
-echo Conta::getNumeroDeContas();
+echo Conta::getNumeroDeContas() . PHP_EOL;
+
+unset($conta1);
+echo Conta::getNumeroDeContas() . PHP_EOL;
