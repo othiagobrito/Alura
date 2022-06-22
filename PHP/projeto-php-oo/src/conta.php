@@ -55,6 +55,11 @@ class Conta
 
     private function setNomeTitular(string $nome): void
     {
+        if (strlen($nome) < 5) {
+            echo "Nome precisa ter pelo menos 5 caracteres!";
+            exit();
+        }
+
         $this->nometitular = $nome;
     }
 
