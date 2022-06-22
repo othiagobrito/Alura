@@ -3,15 +3,13 @@
 class Conta
 {
 
-    private $nometitular;
-    private $cpfTitular;
+    private $titular;
     private $saldo;
     private static $numeroDeContas = 0;
 
-    public function __construct(string $nometitular, string $cpfTitular)
+    public function __construct(Titular $titular)
     {
-        $this->setNomeTitular($nometitular);
-        $this->setCpf($cpfTitular);
+        $this->titular = $titular;
         $this->saldo = 0;
 
         self::$numeroDeContas++;
@@ -61,34 +59,19 @@ class Conta
         return "Saldo: {$this->saldo}";
     }
 
-    private function setNomeTitular(string $nome): void
-    {
-        if (strlen($nome) < 5) {
-            echo "Nome precisa ter pelo menos 5 caracteres!";
-            exit();
-        }
-
-        $this->nometitular = $nome;
-    }
-
-    public function getNome(): string
-    {
-        return $this->nometitular;
-    }
-
-    private function setCpf(string $cpf): void
-    {
-        $this->cpfTitular = $cpf;
-    }
-    
-    public function getCpf(): string
-    {
-        return $this->cpfTitular;
-    }
-
     public static function getNumeroDeContas(): int
     {
         return self::$numeroDeContas;
+    }
+
+    public function getNome()
+    {
+        return $this->titular->getNome();
+    }
+
+    public function getCpf()
+    {
+        return $this->titular->getCpf();
     }
 
 }
