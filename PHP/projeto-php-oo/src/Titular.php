@@ -6,7 +6,7 @@ class Titular
     private $nome;
     private $cpf;
 
-    public function __construct(string $nome, string $cpf)
+    public function __construct(string $nome, Cpf $cpf)
     {
         $this->setNomeTitular($nome);
         $this->cpf = $cpf;
@@ -26,7 +26,7 @@ class Titular
      */ 
     public function getCpf()
     {
-        return $this->cpf;
+        return $this->cpf->getCpf();
     }
 
     private function setNomeTitular(string $nome): void
