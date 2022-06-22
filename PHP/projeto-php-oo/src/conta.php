@@ -3,9 +3,16 @@
 class Conta
 {
 
-    private $cpfTitular = "";
-    private $nometitular = "";
-    private $saldo = 0;
+    private $nometitular;
+    private $cpfTitular;
+    private $saldo;
+
+    public function __construct(string $nometitular, string $cpfTitular)
+    {
+        $this->setNomeTitular($nometitular);
+        $this->setCpf($cpfTitular);
+        $this->saldo = 0;
+    }
 
     public function sacar(float $valor): void
     {
@@ -41,12 +48,12 @@ class Conta
         $destino->depositar($valor);
     }
 
-    public function extrato(): string
+    public function getExtrato(): string
     {
         return "Saldo: {$this->saldo}";
     }
 
-    public function setNomeTitular(string $nome): void
+    private function setNomeTitular(string $nome): void
     {
         $this->nometitular = $nome;
     }
@@ -56,7 +63,7 @@ class Conta
         return $this->nometitular;
     }
 
-    public function setCpf(string $cpf): void
+    private function setCpf(string $cpf): void
     {
         $this->cpfTitular = $cpf;
     }
