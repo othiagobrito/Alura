@@ -2,6 +2,7 @@
 
 class Endereco
 {
+
     private $cidade;
     private $bairro;
     private $rua;
@@ -46,4 +47,5 @@ class Endereco
     {
         return $this->numero;
     }
+    
 }
