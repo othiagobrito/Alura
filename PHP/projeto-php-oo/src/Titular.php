@@ -5,11 +5,13 @@ class Titular
 
     private $nome;
     private $cpf;
+    private $endereco;
 
-    public function __construct(string $nome, Cpf $cpf)
+    public function __construct(string $nome, Cpf $cpf, Endereco $endereco)
     {
         $this->setNomeTitular($nome);
         $this->cpf = $cpf;
+        $this->endereco = $endereco;
     }
     
 
@@ -37,5 +39,13 @@ class Titular
         }
 
         $this->nome = $nome;
+    }
+
+    /**
+     * Get the value of endereco
+     */ 
+    public function getEndereco(): Endereco
+    {
+        return $this->endereco;
     }
 }
