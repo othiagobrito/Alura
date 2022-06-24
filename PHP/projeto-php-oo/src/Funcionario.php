@@ -1,33 +1,15 @@
 <?php
 
-class Funcionario
+class Funcionario extends Pessoa
 {
 
-    private $nome;
-    private $cpf;
     private $cargo;
 
-    public function __construct(string $nome, string $cpf, string $cargo)
+    public function __construct(string $nome, CPF $cpf, string $cargo)
     {
-        $this->nome = $nome;
+        $this->setNomeTitular($nome);
         $this->cpf = $cpf;
         $this->cargo = $cargo;
-    }
-
-    /**
-     * Get the value of nome
-     */ 
-    public function getNome()
-    {
-        return $this->nome;
-    }
-
-    /**
-     * Get the value of cpf
-     */ 
-    public function getCpf()
-    {
-        return $this->cpf;
     }
 
     /**
