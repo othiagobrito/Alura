@@ -7,8 +7,7 @@ class Funcionario extends Pessoa
 
     public function __construct(string $nome, CPF $cpf, string $cargo)
     {
-        $this->setNomeTitular($nome);
-        $this->cpf = $cpf;
+        parent::__construct($nome, $cpf);
         $this->cargo = $cargo;
     }
 
@@ -18,5 +17,10 @@ class Funcionario extends Pessoa
     public function getCargo()
     {
         return $this->cargo;
+    }
+
+    protected function alteraNome(string $nome): void
+    {
+        $this->setNome($nome);
     }
 }
