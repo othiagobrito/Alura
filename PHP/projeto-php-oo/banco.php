@@ -1,9 +1,9 @@
 <?php
 
-require_once 'src/Conta.php';
-require_once 'src/Endereco.php';
-require_once 'src/Titular.php';
-require_once 'src/Cpf.php';
+require_once 'src/Modelo/Conta/Conta.php';
+require_once 'src/Modelo/Endereco.php';
+require_once 'src/Modelo/Conta/Titular.php';
+require_once 'src/Modelo/Cpf.php';
 
 $thiago = new Titular("Thiago Brito", new Cpf("123.456.789-01"), new Endereco("São Paulo", "Jardim das quanta", "Dr. Jurubeba", "156"));
 $conta1 = new Conta($thiago);
