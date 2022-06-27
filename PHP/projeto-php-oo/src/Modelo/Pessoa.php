@@ -2,6 +2,8 @@
 
 namespace Alura\Banco\Modelo;
 
+use Alura\Banco\Modelo\Cpf;
+
 class Pessoa
 {
     protected $nome;
