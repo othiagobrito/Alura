@@ -11,8 +11,9 @@ $conta = new Conta(
     new Titular(
         'Thiago',
         new Cpf('123.456.789-01'),
-        new Endereco("São Paulo", "Jardim das quanta", "Dr. Jurubeba", "156")
-    )
+        new Endereco("São Paulo", "Jardim das quanta", "Dr. Jurubeba", "156"),
+    ),
+    1
 );
 
 $conta->depositar(500);

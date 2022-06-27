@@ -9,7 +9,7 @@ use Alura\Banco\Modelo\Conta\Titular;
 use Alura\Banco\Modelo\Cpf;
 
 $thiago = new Titular("Thiago Brito", new Cpf("123.456.789-01"), new Endereco("São Paulo", "Jardim das quanta", "Dr. Jurubeba", "156"));
-$conta1 = new Conta($thiago);
+$conta1 = new Conta($thiago, 1);
 $conta1->depositar(1500);
 
 echo $conta1->getNome() . PHP_EOL;

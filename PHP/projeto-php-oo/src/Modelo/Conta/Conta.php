@@ -10,10 +10,16 @@ class Conta
     private $saldo;
     private static $numeroDeContas = 0;
 
-    public function __construct(Titular $titular)
+    /**
+     * @var int $tipo 1 == Conta Corrente; 2 = Poupança
+     */
+    private $tipo;
+
+    public function __construct(Titular $titular, int $tipo)
     {
         $this->titular = $titular;
         $this->saldo = 0;
+        $this->tipo = $tipo;
 
         self::$numeroDeContas++;
     }
@@ -25,7 +31,13 @@ class Conta
 
     public function sacar(float $valor): void
     {
-        $tarifaSaque = $valor * 0.05;
+
+        if ($this->tipo === 1) {
+            $tarifaSaque = $valor * 0.05;
+        } else {
+            $tarifaSaque = $valor * 0.03;
+        }
+
         $ValorSaque = $valor + $tarifaSaque;
 
         if ($ValorSaque > $this->saldo) {
