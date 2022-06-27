@@ -25,15 +25,18 @@ class Conta
 
     public function sacar(float $valor): void
     {
-        if ($valor > $this->saldo) {
+        $tarifaSaque = $valor * 0.05;
+        $ValorSaque = $valor + $tarifaSaque;
+
+        if ($ValorSaque > $this->saldo) {
             echo "Saldo indisponível!" . PHP_EOL;
             return;
-        } elseif ($valor <= 0) {
+        } elseif ($ValorSaque <= 0) {
             echo "Valor de saque inválido!" . PHP_EOL;
             return;
         }
         
-        $this->saldo -= $valor;
+        $this->saldo -= $ValorSaque;
     }
 
     public function depositar(float $valor): void
