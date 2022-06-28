@@ -16,7 +16,7 @@ $thiago = new Funcionario(
 $joao = new Funcionario(
     "João",
     new Cpf("789.123.456-01"),
-    "Desenvolvedor",
+    "Gerente",
     2000
 );
 
