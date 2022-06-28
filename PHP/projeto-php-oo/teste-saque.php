@@ -1,6 +1,7 @@
 <?php
 
 use Alura\Banco\Modelo\Conta\Conta;
+use Alura\Banco\Modelo\Conta\ContaCorrente;
 use Alura\Banco\Modelo\Conta\ContaPoupanca;
 use Alura\Banco\Modelo\Conta\Titular;
 use Alura\Banco\Modelo\Cpf;
@@ -8,7 +9,7 @@ use Alura\Banco\Modelo\Endereco;
 
 require_once 'autoload.php';
 
-$conta = new Conta(
+$conta = new ContaCorrente(
     new Titular(
         'Thiago',
         new Cpf('123.456.789-01'),

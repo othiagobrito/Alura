@@ -5,21 +5,20 @@ namespace Alura\Banco\Modelo\Conta;
 class ContaPoupanca extends Conta
 {
 
-    public function sacar(float $valor): void
+    protected function percentualTarifa(): float
     {
-        $tarifaSaque = $valor * 0.03;
+        return 0.03;
+    }
 
-        $ValorSaque = $valor + $tarifaSaque;
-
-        if ($ValorSaque > $this->saldo) {
+    public function transferir(float $valor, Conta $destino): void
+    {
+        if ($valor > $this->saldo) {
             echo "Saldo indisponível!" . PHP_EOL;
             return;
-        } elseif ($ValorSaque <= 0) {
-            echo "Valor de saque inválido!" . PHP_EOL;
-            return;
         }
-        
-        $this->saldo -= $ValorSaque;
+
+        $this->sacar($valor);
+        $destino->depositar($valor);
     }
 
 }
