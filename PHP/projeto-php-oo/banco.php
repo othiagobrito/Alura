@@ -2,11 +2,8 @@
 
 require_once 'autoload.php';
 
-use Alura\Banco\Modelo\Conta\Conta;
-use Alura\Banco\Modelo\Endereco;
-use Alura\Banco\Modelo\Pessoa;
-use Alura\Banco\Modelo\Conta\Titular;
-use Alura\Banco\Modelo\Cpf;
+use Alura\Banco\Modelo\Conta\{Conta, ContaCorrente, ContaPoupanca, Titular};
+use Alura\Banco\Modelo\{Cpf, Endereco};
 
 $thiago = new Titular("Thiago Brito", new Cpf("123.456.789-01"), new Endereco("São Paulo", "Jardim das quanta", "Dr. Jurubeba", "156"));
 $conta1 = new Conta($thiago, 1);
