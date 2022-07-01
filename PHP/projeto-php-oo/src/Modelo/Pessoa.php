@@ -31,7 +31,7 @@ class Pessoa
         return $this->cpf->getCpf();
     }
 
-    public function setNome(string $nome): void
+    final public function setNome(string $nome): void
     {
         if (strlen($nome) < 5) {
             echo "Nome precisa ter pelo menos 5 caracteres!";

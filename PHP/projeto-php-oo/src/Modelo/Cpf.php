@@ -2,7 +2,7 @@
 
 namespace Alura\Banco\Modelo;
 
-class Cpf
+final class Cpf
 {
 
     private $cpf;
