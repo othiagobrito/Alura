@@ -18,6 +18,11 @@ class Endereco
         $this->numero = $numero;
     }
 
+    public function __toString(): string
+    {
+        return "{$this->rua}, {$this->numero}, {$this->bairro} - {$this->cidade}" . PHP_EOL;
+    }
+
     /**
      * Get the value of cidade
      */ 
