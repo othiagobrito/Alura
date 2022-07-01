@@ -2,6 +2,15 @@
 
 namespace Alura\Banco\Modelo;
 
+
+/**
+ * Class Endereco
+ * @package Alura\Banco\Modelo
+ * @property-read string $cidade
+ * @property-read string $bairro
+ * @property-read string $rua
+ * @property-read string $numero
+ */
 class Endereco
 {
 
@@ -20,7 +29,7 @@ class Endereco
 
     public function __toString(): string
     {
-        return "{$this->rua}, {$this->numero}, {$this->bairro} - {$this->cidade}" . PHP_EOL;
+        return "{$this->rua}, {$this->numero}, {$this->bairro} - {$this->cidade}";
     }
 
     /**
@@ -54,5 +63,64 @@ class Endereco
     {
         return $this->numero;
     }
-    
+
+    public function __get(string $nomeAtributo)
+    {
+        $metodo = "get" . ucfirst($nomeAtributo);
+        return $this->$metodo();
+    }
+
+    public function __set($nomeAtributo, $valorAtribuido): void
+    {
+        $metodo = "set" . ucfirst($nomeAtributo);
+        $this->$metodo($valorAtribuido);
+    }
+
+    /**
+     * Set the value of cidade
+     *
+     * @return  self
+     */ 
+    public function setCidade($cidade)
+    {
+        $this->cidade = $cidade;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of bairro
+     *
+     * @return  self
+     */ 
+    public function setBairro($bairro)
+    {
+        $this->bairro = $bairro;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of rua
+     *
+     * @return  self
+     */ 
+    public function setRua($rua)
+    {
+        $this->rua = $rua;
+
+        return $this;
+    }
+
+    /**
+     * Set the value of numero
+     *
+     * @return  self
+     */ 
+    public function setNumero($numero)
+    {
+        $this->numero = $numero;
+
+        return $this;
+    }
 }
