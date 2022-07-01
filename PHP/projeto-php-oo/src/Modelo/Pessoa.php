@@ -6,6 +6,9 @@ use Alura\Banco\Modelo\Cpf;
 
 class Pessoa
 {
+
+    use AcessoPropriedades;
+
     protected $nome;
     private $cpf;
 
@@ -40,4 +43,5 @@ class Pessoa
 
         $this->nome = $nome;
     }
+    
 }
