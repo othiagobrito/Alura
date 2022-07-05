@@ -1,11 +1,11 @@
 <?php
 
-$arquivo = fopen("lista-cursos.txt", "r");
+$nome_arquivo = "lista-cursos.txt";
+$arquivo = fopen($nome_arquivo, "r");
 
-while (!feof($arquivo)) {
-    $curso = fgets($arquivo);
+$tamanhoDoArquivo = filesize($nome_arquivo);
+$cursos = fread($arquivo, $tamanhoDoArquivo);
 
-    echo $curso;
-}
+echo $cursos;
 
 fclose($arquivo);
