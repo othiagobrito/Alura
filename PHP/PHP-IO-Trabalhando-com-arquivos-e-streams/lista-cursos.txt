@@ -5,3 +5,11 @@ Curso de Java
 Curso de C
 Curso de C++
 Curso de C#
+Curso de HTML Parte 1
+Curso de HTML Parte 2
+Curso de HTML Parte 3
+Curso de HTML Parte 4
+Curso de CSS Parte 1
+Curso de CSS Parte 2
+Curso de CSS Parte 3
+Curso de CSS Parte 4
