@@ -1,8 +1,8 @@
 <?php
 
-$arquivo = fopen("cursos-php.txt", "w");
+$arquivo = fopen("cursos-php.txt", "a");
 
-$curso = "Curso de HTML";
+$curso = "\nCurso de CSS";
 fwrite($arquivo, $curso);
 
 fclose($arquivo);
