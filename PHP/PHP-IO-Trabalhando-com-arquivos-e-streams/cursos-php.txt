@@ -1,2 +1,4 @@
 Curso de HTML
 Curso de CSS
+Curso GIT: Curso para ensinar git
+Curso Java: Aprenda Java hoje
