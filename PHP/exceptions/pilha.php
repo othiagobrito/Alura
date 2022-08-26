@@ -3,8 +3,13 @@
 function funcao1()
 {
     echo 'Entrei na função 1' . PHP_EOL;
-    // $arrayFixo = new SplFixedArray(2);
-    // $arrayFixo[3] = 'Valor';
+
+    try {
+        $arrayFixo = new SplFixedArray(2);
+        $arrayFixo[3] = 'Valor';
+    } catch (RuntimeException $erro) {
+        echo 'Aconteceu um erro na função 1' . PHP_EOL;
+    }
 
     // $divisao = intdiv(5, 0);
 
