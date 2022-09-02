@@ -9,10 +9,7 @@ function funcao1()
     } catch (RuntimeException | DivisionByZeroError $error) {
         echo $error->getMessage() . PHP_EOL;
         echo $error->getLine() . PHP_EOL;
-        echo $error->getTraceAsString() . PHP_EOL;
-
-        throw new RuntimeException("Exceção tratada, segue segunda", 1, $error);
-        
+        echo $error->getTraceAsString() . PHP_EOL;        
     }
 
     echo 'Saindo da função 1' . PHP_EOL;
