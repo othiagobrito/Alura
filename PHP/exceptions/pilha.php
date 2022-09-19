@@ -19,7 +19,7 @@ function funcao2()
 {
     echo 'Entrei na função 2' . PHP_EOL;
 
-    throw new RuntimeException();
+    throw new BadFunctionCallException();
     
     for ($i = 1; $i <= 5; $i++) {
         echo $i . PHP_EOL;
