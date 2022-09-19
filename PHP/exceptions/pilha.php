@@ -6,10 +6,10 @@ function funcao1()
 
     try {
         funcao2();
-    } catch (RuntimeException | DivisionByZeroError $error) {
-        echo $error->getMessage() . PHP_EOL;
-        echo $error->getLine() . PHP_EOL;
-        echo $error->getTraceAsString() . PHP_EOL;        
+    } catch (Throwable $throwable) {
+        echo $throwable->getMessage() . PHP_EOL;
+        echo $throwable->getLine() . PHP_EOL;
+        echo $throwable->getTraceAsString() . PHP_EOL;        
     }
 
     echo 'Saindo da função 1' . PHP_EOL;
