@@ -4,7 +4,7 @@ namespace Alura\Banco\Modelo\Conta;
 
 abstract class Conta
 {
-    private object $titular;
+    private Titular $titular;
     protected float $saldo;
     private static int $numeroDeContas = 0;
 
@@ -26,7 +26,7 @@ abstract class Conta
         $tarifaSaque = $valorASacar * $this->percentualTarifa();
         $valorSaque = $valorASacar + $tarifaSaque;
         if ($valorSaque > $this->saldo) {
-            throw new SaldoInsuficienteException();
+            throw new SaldoInsuficienteException($valorSaque, $this->saldo);
         }
 
         $this->saldo -= $valorSaque;
