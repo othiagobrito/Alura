@@ -1,0 +1,17 @@
+{
+    "name": "thiago/buscador-cursos",
+    "description": "Projeto que busca os cursos de PHP da plataforma Alura",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Thiago\\BuscadorCursos\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "thiagobrito",
+            "email": "thiago7brito@gmail.com"
+        }
+    ],
+    "require": {}
+}
