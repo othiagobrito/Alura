@@ -1,7 +1,9 @@
 <?php
 
 require 'vendor/autoload.php';
+require_once 'src/Buscador.php';
 
+use Alura\BuscadorDeCursos\Buscador;
 use GuzzleHttp\Client;
 use Symfony\Component\DomCrawler\Crawler;
 
@@ -10,15 +12,12 @@ $client = new Client([
     'verify' => false
 ]);
 
-$response = $client->request('GET', 'https://www.alura.com.br/cursos-online-programacao/php');
-
-$html = $response->getBody();
-
 $crawler = new Crawler();
-$crawler->addHtmlContent($html);
 
-$courses = $crawler->filter('span.card-curso__nome');
+$searcher = new Buscador($client, $crawler);
+
+$courses = $searcher->search('/cursos-online-programacao/php');
 
 foreach ($courses as $course) {
-    echo $course->textContent . PHP_EOL;
+    echo $course . PHP_EOL;
 }
