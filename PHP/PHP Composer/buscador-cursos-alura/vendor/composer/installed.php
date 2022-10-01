@@ -3,7 +3,7 @@
         'name' => 'thiago/buscador-cursos',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'ed90092bcd0bd47a9fe0f7d1e1a6491694c684fe',
+        'reference' => '2b34810242bdee939821446002720f0cde549ae6',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -100,6 +100,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'symfony/css-selector' => array(
+            'pretty_version' => 'v6.1.3',
+            'version' => '6.1.3.0',
+            'reference' => '0dd5e36b80e1de97f8f74ed7023ac2b837a36443',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/css-selector',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'symfony/deprecation-contracts' => array(
             'pretty_version' => 'v3.1.1',
             'version' => '3.1.1.0',
@@ -139,7 +148,7 @@
         'thiago/buscador-cursos' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'ed90092bcd0bd47a9fe0f7d1e1a6491694c684fe',
+            'reference' => '2b34810242bdee939821446002720f0cde549ae6',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
