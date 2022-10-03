@@ -19,5 +19,8 @@
         "guzzlehttp/guzzle": "^7.5",
         "symfony/dom-crawler": "^6.1",
         "symfony/css-selector": "^6.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
     }
 }
