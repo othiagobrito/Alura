@@ -3,6 +3,8 @@
     "description": "Projeto que busca os cursos de PHP da plataforma Alura",
     "type": "library",
     "autoload": {
+        "classmap": ["./Teste.php"],
+        "files": ["./functions.php"],
         "psr-4": {
             "Alura\\BuscadorDeCursos\\": "src/"
         }
