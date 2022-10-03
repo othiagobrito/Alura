@@ -16,10 +16,6 @@ class ComposerStaticInit455142cacbee8f3d8153eb1f890af45f
     );
 
     public static $prefixLengthsPsr4 = array (
-        'T' => 
-        array (
-            'Thiago\\BuscadorCursos\\' => 22,
-        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
@@ -42,13 +38,13 @@ class ComposerStaticInit455142cacbee8f3d8153eb1f890af45f
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
         ),
+        'A' => 
+        array (
+            'Alura\\BuscadorDeCursos\\' => 23,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Thiago\\BuscadorCursos\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
-        ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
@@ -89,6 +85,10 @@ class ComposerStaticInit455142cacbee8f3d8153eb1f890af45f
         'GuzzleHttp\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
+        ),
+        'Alura\\BuscadorDeCursos\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 
