@@ -3,7 +3,7 @@
         'name' => 'thiago/buscador-cursos',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'f239e10bfdf5e4b631470142816da61f3d7c5f86',
+        'reference' => 'a4ee45134ed9c9d9bd2c7fcd8f87394cba811e86',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -343,6 +343,15 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+        'squizlabs/php_codesniffer' => array(
+            'pretty_version' => '3.7.1',
+            'version' => '3.7.1.0',
+            'reference' => '1359e176e9307e906dc3d890bcc9603ff6d90619',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../squizlabs/php_codesniffer',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
         'symfony/css-selector' => array(
             'pretty_version' => 'v6.1.3',
             'version' => '6.1.3.0',
@@ -400,7 +409,7 @@
         'thiago/buscador-cursos' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'f239e10bfdf5e4b631470142816da61f3d7c5f86',
+            'reference' => 'a4ee45134ed9c9d9bd2c7fcd8f87394cba811e86',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
