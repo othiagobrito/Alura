@@ -3,7 +3,7 @@
         'name' => 'thiago/buscador-cursos',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '8abfbb96eb27f5e3478a8dc08e6d2a4a2730d4ed',
+        'reference' => 'd7bae1d0d12ef577c4e7cc055ce992d2070c91d4',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -586,7 +586,7 @@
         'thiago/buscador-cursos' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '8abfbb96eb27f5e3478a8dc08e6d2a4a2730d4ed',
+            'reference' => 'd7bae1d0d12ef577c4e7cc055ce992d2070c91d4',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
