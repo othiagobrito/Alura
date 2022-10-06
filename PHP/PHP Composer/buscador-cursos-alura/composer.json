@@ -28,6 +28,10 @@
     "scripts": {
         "test": "phpunit tests\\TestBuscadorDeCursos.php",
         "cs": "phpcs --standard=PSR12 src/",
-        "phan": "phan --allow-polyfill-parser"
+        "phan": "phan --allow-polyfill-parser",
+        "check": ["@phan", "@cs", "@test"]
+    },
+    "scripts-descriptions": {
+        "check": "Run code verifications: PHPUnit, PHPCS and PHAN"
     }
 }
