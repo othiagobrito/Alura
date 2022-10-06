@@ -30,7 +30,8 @@
         "cs": "phpcs --standard=PSR12 src/",
         "phan": "phan --allow-polyfill-parser",
         "display-courses": "php buscar-cursos.php",
-        "check": ["@phan", "@cs", "@test"]
+        "check": ["@phan", "@cs", "@test"],
+        "post-update-cmd": ["@test"]
     },
     "scripts-descriptions": {
         "check": "Run code verifications: PHPUnit, PHPCS and PHAN"
