@@ -11,4 +11,9 @@ class SeriesController extends Controller
         $series = ['The Big Bang Theory', 'Dexter', 'Family Guy'];
         return view('series.index', compact('series'));
     }
+
+    public function create()
+    {
+        return view('series.create');
+    }
 }
