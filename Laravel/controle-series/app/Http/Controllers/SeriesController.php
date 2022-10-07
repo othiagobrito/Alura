@@ -23,6 +23,6 @@ class SeriesController extends Controller
     {
         Series::create($request->all());
 
-        return redirect('series');
+        return to_route('series.index');
     }
 }
