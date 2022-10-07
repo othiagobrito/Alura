@@ -9,6 +9,6 @@ class SeriesController extends Controller
     public function index()
     {
         $series = ['The Big Bang Theory', 'Dexter', 'Family Guy'];
-        return view('listar-series', compact('series'));
+        return view('series.index', compact('series'));
     }
 }
