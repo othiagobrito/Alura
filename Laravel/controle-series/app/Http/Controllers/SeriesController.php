@@ -9,8 +9,8 @@ class SeriesController extends Controller
 {
     public function index()
     {
-        $series = Series::all();
-        
+        $series = Series::getSeries();
+
         return view('series.index', compact('series'));
     }
 

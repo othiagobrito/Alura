@@ -10,4 +10,9 @@ class Series extends Model
     use HasFactory;
 
     protected $table = 'series';
+
+    public static function getSeries()
+    {
+        return self::orderBy('name')->get();
+    }
 }
