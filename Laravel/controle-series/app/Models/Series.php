@@ -11,6 +11,8 @@ class Series extends Model
 
     protected $table = 'series';
 
+    protected $fillable = ['name'];
+
     public static function getSeries()
     {
         return self::orderBy('name')->get();

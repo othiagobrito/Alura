@@ -21,10 +21,7 @@ class SeriesController extends Controller
 
     public function store(Request $request)
     {
-        $serie = new Series();
-
-        $serie->name = $request->name;
-        $serie->save();
+        Series::create($request->all());
 
         return redirect('series');
     }
