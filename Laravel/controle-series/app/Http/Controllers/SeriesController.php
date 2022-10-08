@@ -23,7 +23,7 @@ class SeriesController extends Controller
     {
         Series::create($request->all());
 
-        return to_route('series.index');
+        return to_route('series.index')->with('success', 'Série adicionada com sucesso!');
     }
 
     public function destroy($id)
@@ -31,11 +31,11 @@ class SeriesController extends Controller
         $serie = Series::find($id);
 
         if (!$serie) {
-            return back()->with('fail', '');
+            return back()->with('fail', 'Erro: Série não encontrada!');
         }
 
         $serie->delete();
 
-        return back()->with('success', '');
+        return back()->with('success', 'Série apagada com sucesso!');
     }
 }
