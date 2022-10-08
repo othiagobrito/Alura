@@ -21,21 +21,19 @@ class SeriesController extends Controller
 
     public function store(Request $request)
     {
-        Series::create($request->all());
+        $series = Series::create($request->all());
 
-        return to_route('series.index')->with('success', 'Série adicionada com sucesso!');
+        return to_route('series.index')->with('success', "Série {$series->name} adicionada com sucesso!");
     }
 
-    public function destroy($id)
+    public function destroy(Series $series)
     {
-        $serie = Series::find($id);
-
-        if (!$serie) {
+        if (!$series) {
             return back()->with('fail', 'Erro: Série não encontrada!');
         }
 
-        $serie->delete();
+        $series->delete();
 
-        return back()->with('success', 'Série apagada com sucesso!');
+        return back()->with('success', "Série {$series->name} apagada com sucesso!");
     }
 }

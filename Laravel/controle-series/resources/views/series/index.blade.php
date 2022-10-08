@@ -2,11 +2,11 @@
     <a href="{{ route('series.create') }}" class="btn btn-dark mb-2">Adicionar</a>
 
     @if (session('success'))
-        <div class="alert alert-success">{{ session('success') }}</div>
+        <div id="msg" class="alert alert-success d-flex justify-content-between align-items-center">{{ session('success') }} <button class="btn" onclick="closeMsg()">X</button></div>
     @endif
 
     @if (session('fail'))
-        <div class="alert alert-danger">{{ session('fail') }}</div>
+        <div id="msg" class="alert alert-danger d-flex justify-content-between align-items-center">{{ session('fail') }} <button class="btn" onclick="closeMsg()">X</button></div>
     @endif
 
     <ul class="list-group">
@@ -23,4 +23,10 @@
             </li>
         @endforeach
     </ul>
+
+    <script>
+        function closeMsg() {
+            document.getElementById('msg').style.cssText = 'display: none !important;';
+        }
+    </script>
 </x-layout>
