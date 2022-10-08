@@ -18,7 +18,7 @@ Route::get('/', function () {
     return to_route('series.index');
 });
 
-Route::resource('/series', SeriesController::class)->only(['index', 'create', 'update', 'edit', 'store', 'destroy']);
+Route::resource('/series', SeriesController::class)->except(['show']);
 
 // Route::controller(SeriesController::class)->group(function () {
 //     Route::get('/series', 'index')->name('series.index');

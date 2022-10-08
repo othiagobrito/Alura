@@ -19,18 +19,14 @@ class SeriesController extends Controller
         return view('series.create');
     }
 
-    public function edit($id)
+    public function edit(Series $series)
     {
-        $series = Series::find($id);
-
         return view('series.edit', compact('series'));
     }
 
-    public function update($id, Request $request)
+    public function update(Series $series, Request $request)
     {
-        $series = Series::find($id);
-
-        $series->name = $request->name;
+        $series->fill($request->all());
         $series->save();
 
         return to_route('series.index')->with('success', "Série {$series->name} atualizada com sucesso!");
