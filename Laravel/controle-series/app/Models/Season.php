@@ -11,6 +11,8 @@ class Season extends Model
     
     protected $table = 'seasons';
 
+    protected $fillable = ['number'];
+
     public function series()
     {
         return $this->belongsTo(Series::class);
