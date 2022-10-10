@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,9 +14,13 @@ class Series extends Model
 
     protected $fillable = ['name'];
 
-    public static function getSeries()
+    protected $with = ['seasons'];
+
+    protected static function booted()
     {
-        return self::orderBy('name')->get();
+        self::addGlobalScope('ordered', function (Builder $queryBuilder) {
+            $queryBuilder->orderBy('name');
+        });
     }
 
     public function seasons()

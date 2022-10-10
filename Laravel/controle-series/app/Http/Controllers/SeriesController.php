@@ -10,7 +10,7 @@ class SeriesController extends Controller
 {
     public function index()
     {
-        $series = Series::getSeries();
+        $series = Series::all();
 
         return view('series.index', compact('series'));
     }
