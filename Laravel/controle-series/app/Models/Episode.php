@@ -10,6 +10,8 @@ class Episode extends Model
     use HasFactory;
 
     protected $table = 'episodes';
+    
+    public $timestamps = false;
 
     public function season()
     {
