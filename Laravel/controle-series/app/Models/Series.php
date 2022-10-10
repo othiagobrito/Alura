@@ -17,4 +17,9 @@ class Series extends Model
     {
         return self::orderBy('name')->get();
     }
+
+    public function seasons()
+    {
+        return $this->hasMany(Season::class);
+    }
 }
