@@ -11,7 +11,7 @@ class Episode extends Model
 
     protected $table = 'episodes';
 
-    protected $fillable = ['number'];
+    protected $fillable = ['number', 'watched'];
     
     public $timestamps = false;
 
