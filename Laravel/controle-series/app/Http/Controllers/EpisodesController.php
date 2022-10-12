@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\{Episode, Season};
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class EpisodesController extends Controller
 {
@@ -16,12 +17,21 @@ class EpisodesController extends Controller
     {
         $watchedEpisodes = $request->episodes;
 
-        $season->episodes->each(function (Episode $episode) use ($watchedEpisodes) {
-            $episode->watched = in_array($episode->id, $watchedEpisodes);
-        });
+        DB::beginTransaction();
 
-        $season->push();
+        try {
+            $season->episodes->each(function (Episode $episode) use ($watchedEpisodes) {
+                $episode->watched = in_array($episode->id, $watchedEpisodes);
+            });
 
-        return to_route('episodes.index', $season->id);
+            $season->push();
+
+            DB::commit();
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            return to_route('episodes.index', $season->id)->with('fail', 'Erro ao salvar!');
+        }
+
+        return to_route('episodes.index', $season->id)->with('success', 'Salvo com sucesso!');
     }
 }
