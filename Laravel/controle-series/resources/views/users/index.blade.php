@@ -1,6 +1,11 @@
-<x-layout title="Login">
+<x-layout title="Register">
     <form method="post">
         @csrf
+
+        <div class="form-group">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" name="name" id="name" class="form-control">
+        </div>
 
         <div class="form-group">
             <label for="email" class="form-label">Email</label>
@@ -12,8 +17,8 @@
             <input type="password" name="password" id="password" class="form-control">
         </div>
 
-        <button class="btn btn-primary mt-3">Sign in</button>
+        <button class="btn btn-primary mt-3">Registrar</button>
 
-        <a href="{{ route('users.index') }}" class="btn btn-secondary mt-3">Registrar</a>
+        <a href="{{ route('login') }}" class="btn btn-secondary mt-3">Login</a>
     </form>
 </x-layout>
