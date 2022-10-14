@@ -19,4 +19,11 @@ class LoginController extends Controller
 
         return to_route('series.index');
     }
+
+    public function destroy()
+    {
+        auth()->logout();
+
+        return to_route('login');
+    }
 }

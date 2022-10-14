@@ -17,7 +17,7 @@
             <input type="password" name="password" id="password" class="form-control">
         </div>
 
-        <button class="btn btn-primary mt-3">Registrar</button>
+        <button class="btn btn-primary mt-3">Sign up</button>
 
         <a href="{{ route('login') }}" class="btn btn-secondary mt-3">Login</a>
     </form>
