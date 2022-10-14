@@ -8,11 +8,15 @@
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     Episode {{ $episode->number }}
 
-                    <input type="checkbox" name="episodes[]" value="{{ $episode->id }}" @if ($episode->watched) checked @endif>
+                    @auth
+                        <input type="checkbox" name="episodes[]" value="{{ $episode->id }}" @if ($episode->watched) checked @endif>
+                    @endauth
                 </li>
             @endforeach
         </ul>
 
-        <button class="btn btn-primary mt-2 mb-2">Salvar</button>
+        @auth
+            <button class="btn btn-primary mt-2 mb-2">Salvar</button>
+        @endauth
     </form>
 </x-layout>

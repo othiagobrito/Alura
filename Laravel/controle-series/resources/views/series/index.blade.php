@@ -1,5 +1,7 @@
 <x-layout title="Series">
-    <a href="{{ route('series.create') }}" class="btn btn-dark mb-2">Add</a>
+    @auth
+        <a href="{{ route('series.create') }}" class="btn btn-dark mb-2">Add</a>
+    @endauth
 
     <ul class="list-group">
         @foreach ($series as $series)
@@ -8,16 +10,18 @@
                     {{ $series->name }}
                 </a>
 
-                <span class="d-flex">
-                    <a href="{{ route('series.edit', $series->id) }}"><button class="btn btn-primary btn-sm"><ion-icon name="pencil-sharp"></ion-icon></button></a>
-                    
-                    <form action="{{ route('series.destroy', $series->id) }}" method="POST">
-                        @method('DELETE')
-                        @csrf
+                @auth
+                    <span class="d-flex">
+                        <a href="{{ route('series.edit', $series->id) }}"><button class="btn btn-primary btn-sm"><ion-icon name="pencil-sharp"></ion-icon></button></a>
                         
-                        <button class="btn btn-danger btn-sm"><ion-icon name="trash-sharp"></ion-icon></button>
-                    </form>
-                </span>
+                        <form action="{{ route('series.destroy', $series->id) }}" method="POST">
+                            @method('DELETE')
+                            @csrf
+                            
+                            <button class="btn btn-danger btn-sm"><ion-icon name="trash-sharp"></ion-icon></button>
+                        </form>
+                    </span>
+                @endauth
             </li>
         @endforeach
     </ul>
