@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\{SeriesController, SeasonsController, EpisodesController};
+use App\Http\Middleware\Authenticator;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return to_route('series.index');
-});
+})->middleware(Authenticator::class);
 
 Route::resource('/series', SeriesController::class)->except(['show']);
 
