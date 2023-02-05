@@ -17,9 +17,9 @@ class SeriesCreated extends Mailable
      *
      * @return void
      */
-    public function __construct(public string $seriesName = 'Teste', public int $seriesId = 1, public int $seriesSeasonsAmount = 1, public int $seriesEpisodesAmount = 1)
+    public function __construct(public string $seriesName, public int $seriesId, public int $seriesSeasonsAmount, public int $seriesEpisodesAmount)
     {
-        //
+        $this->subject("Série {$seriesName} criada");
     }
 
     /**
@@ -28,9 +28,7 @@ class SeriesCreated extends Mailable
      * @return $this
      */
     public function build()
-    {
-        $series = Series::find(1);
-        
-        return $this->markdown('mail.series-created', compact('series'));
+    {       
+        return $this->markdown('mail.series-created');
     }
 }

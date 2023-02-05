@@ -1,9 +1,9 @@
 @component('mail::message')
-# {{ $series->name }} criada!
+# {{ $seriesName }} criada!
 
-A série '{{ $series->name }}' com {{ $series->seasons->count() }} temporadas e {{ $series->seasons()->with('episodes')->first()->episodes->count() }} foi criada.
+A série '{{ $seriesName }}' com {{ $seriesSeasonsAmount }} temporadas e {{ $seriesEpisodesAmount }} foi criada.
 
-@component('mail::button', ['url' => route('seasons.index', $series->id)])
+@component('mail::button', ['url' => route('seasons.index', $seriesId)])
     Ver série
 @endcomponent
 
