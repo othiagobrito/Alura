@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\{SeriesController, SeasonsController, EpisodesController, LoginController, UsersController};
+use App\Mail\SeriesCreated;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('/series', SeriesController::class)->except(['show']);
+
+Route::get('/mail/test', [SeriesCreated::class, 'build']);
 
 // Route::get('/login', [LoginController::class, 'index'])->name('login');
 // Route::post('/login', [LoginController::class, 'store'])->name('sign');
