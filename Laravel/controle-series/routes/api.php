@@ -21,4 +21,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::apiResource('/series', SeriesController::class, ['index', 'store']);
 Route::get('/series/{id}/seasons', [SeasonsController::class, 'index']);
-Route::get('/series/{id}/episodes', [EpisodesController::class, 'index']);
+
+Route::controller(EpisodesController::class)->group(function () {
+    Route::get('/series/{id}/episodes', 'index');
+
+    Route::patch('/episodes/{id}', 'update');
+});
