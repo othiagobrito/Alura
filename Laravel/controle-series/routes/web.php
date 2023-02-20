@@ -17,8 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('/series', SeriesController::class)->except(['show']);
 
-Route::get('/mail/test', [SeriesCreated::class, 'build']);
-
 // Route::get('/login', [LoginController::class, 'index'])->name('login');
 // Route::post('/login', [LoginController::class, 'store'])->name('sign');
 // Route::get('/logout', [LoginController::class, 'destroy'])->name('logout');

@@ -19,6 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::controller(SeriesController::class)->prefix('/series')->as('series.')->group(function () {
-   Route::get('/', 'index')->name('index');
-});
+Route::apiResource('/series', SeriesController::class, ['index', 'store']);
