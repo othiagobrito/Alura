@@ -17,11 +17,14 @@ class SeriesController extends Controller
 
     public function index(Request $request)
     {
-        if (! $request->has('name')) {
-            return response()->json(Series::all(), 200);
+        $query = Series::query();
+
+        if ($request->has('name')) {
+            $query->whereName($request->name);
+            // return response()->json(Series::paginate(), 200);
         }
 
-        return response()->json(Series::whereName($request->name)->get(), 200);
+        return response()->json($query->paginate(5), 200);
     }
 
     public function store(SeriesFormRequest $request)
