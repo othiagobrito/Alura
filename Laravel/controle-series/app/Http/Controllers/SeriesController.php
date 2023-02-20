@@ -49,7 +49,7 @@ class SeriesController extends Controller
 
         $mail = new SeriesCreated($series->name, $series->id, $series->seasons->count(), $series->seasons()->with('episodes')->first()->episodes->count());
 
-        Mail::to(auth()->user()->email)->send($mail);
+        Mail::to(auth()->user()->email)->queue($mail);
 
         return to_route('series.index')->with('success', "Série {$series->name} adicionada com sucesso!");
     }
