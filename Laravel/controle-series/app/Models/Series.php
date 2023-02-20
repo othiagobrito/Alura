@@ -27,4 +27,9 @@ class Series extends Model
     {
         return $this->hasMany(Season::class, 'series_id');
     }
+
+    public function episodes()
+    {
+        return $this->hasManyThrough(Episode::class, Season::class);
+    }
 }
