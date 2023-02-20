@@ -12,7 +12,7 @@ class Series extends Model
 
     protected $table = 'series';
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'cover'];
 
     protected $with = ['seasons'];
 

@@ -43,6 +43,7 @@ class SeriesController extends Controller
 
     public function store(SeriesFormRequest $request)
     {
+        dd($request->file('cover'));
         $series = $this->repository->add($request);
 
         $created = new SeriesCreated($series->name, $series->id, $series->seasons->count(), $series->seasons()->with('episodes')->first()->episodes->count());
