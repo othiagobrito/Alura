@@ -27,6 +27,23 @@ class SeriesController extends Controller
 
     public function show(int $id)
     {
-        return response()->json(Series::whereId($id)->with('seasons.episodes')->first(), 200);
+        $series = Series::with('seasons.episodes')->find($id);
+
+        return $series ? response()->json($series, 200) : response()->json(['message' => 'Series not found'], 404);
+    }
+
+    public function update(Series $series, SeriesFormRequest $request)
+    {
+        $series->fill($request->all());
+        $series->save();
+
+        return response()->json($series, 200);
+    }
+
+    public function destroy(int $id)
+    {
+        Series::destroy($id);
+
+        return response()->noContent();
     }
 }
