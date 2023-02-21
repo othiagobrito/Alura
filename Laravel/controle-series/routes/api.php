@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Api\{EpisodesController, SeasonsController, SeriesController};
+use App\Http\Controllers\Api\{EpisodesController, LoginController, SeasonsController, SeriesController};
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,11 +19,16 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('/series', SeriesController::class, ['index', 'store']);
-Route::get('/series/{id}/seasons', [SeasonsController::class, 'index']);
+Route::middleware('auth:sanctum')->group(function () {
+    Route::apiResource('/series', SeriesController::class, ['index', 'store']);
+    Route::get('/series/{id}/seasons', [SeasonsController::class, 'index']);
+    
+    Route::controller(EpisodesController::class)->group(function () {
+        Route::get('/series/{id}/episodes', 'index');
+    
+        Route::patch('/episodes/{id}', 'update');
+    });
 
-Route::controller(EpisodesController::class)->group(function () {
-    Route::get('/series/{id}/episodes', 'index');
-
-    Route::patch('/episodes/{id}', 'update');
 });
+
+Route::post('/login', [LoginController::class, 'store']);
