@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\SeriesFormRequest;
 use App\Models\Series;
 use App\Repositories\SeriesRepository;
+use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Http\Request;
 
 class SeriesController extends Controller
@@ -21,7 +22,6 @@ class SeriesController extends Controller
 
         if ($request->has('name')) {
             $query->whereName($request->name);
-            // return response()->json(Series::paginate(), 200);
         }
 
         return response()->json($query->paginate(5), 200);
@@ -47,8 +47,9 @@ class SeriesController extends Controller
         return response()->json($series, 200);
     }
 
-    public function destroy(int $id)
+    public function destroy(int $id, Authenticatable $user)
     {
+        dd($user->tokenCan('series:delete'));
         Series::destroy($id);
 
         return response()->noContent();

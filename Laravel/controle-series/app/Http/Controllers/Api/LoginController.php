@@ -17,8 +17,8 @@ class LoginController extends Controller
         }
 
         $user = auth()->user();
-
-        $token = $user->createToken('token');
+        $user->tokens()->delete();
+        $token = $user->createToken('token', ['series:delete']);
 
         return response()->json($token->plainTextToken, 200);
     }
